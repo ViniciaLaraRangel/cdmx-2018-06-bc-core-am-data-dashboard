@@ -1,3 +1,4 @@
+
 // Traer de data.js
 const printInfo = students => {
   // console.log(students);
