@@ -20,7 +20,7 @@
         <a href="#menu" id="menuLink" class="menu-link active">
           <!-- Hamburger icon -->
           <span></span>
-      </a>
+        </a>
         <!--Insertar logo que le dé identidad a Data Dashboard-->
         <div id="menu">
             <div class="pure-menu">
@@ -31,9 +31,11 @@
                 
                 <!--Comienzan opciones que se quieren integrar a la barra vertical izquierda-->
                 <ul class="pure-menu-list" id="generacion">
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><option value="lima">PRUEBA1</option></a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><option value="cdmx">PRUEBA2</option></a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><option value="santiago">PRUEBA3</option></a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="lima">Lima</button></a></li>
+
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="mexico">México</button></a></li>
+
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="santiago">Santiago</button></a></li>
                 </ul>
             </div>
         </div>
@@ -53,68 +55,57 @@
             </div>
         </div>
   <!--NavBar Bootstrap-Barra horizontal con funcionalidad-->
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Menú</a>
-      <!--Botón para que detone búsqueda-->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-txoggler-icon"></span>
-      </button>
+    <nav class="navbar">
       <!--Funcionalidades de barra horizontal-->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
+        <ul class="navbar-nav mr-auto d-none d-lg-block d-sm-block d-md-none"> 
           <li class="nav-item">
-            <a class="nav-link" href="#"></a></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Opciones
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">AcciónUno</a>
-              <a class="dropdown-item" href="#">AcciónDos</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">AcciónTres</a>
-            </div>
+            <a class="nav-link" href="#"></a>
           </li>
         </ul>
-        <!--Aquí funcionalidad de búsqueda de estudiantes-->
-        <form class="form-inline my-2 my-lg-0">
+        <!--BOTÓN E INPUT ==> funcionalidad de búsqueda de estudiantes-->
+        <form>
+        <div class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" id="name-to-search" placeholder="Buscar estudiantes" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search">Buscar</button>
-        </form>
+          <button class="btn btn-outline-success my-2 my-sm-0" id="search">Buscar</button>
+        </div>
+      </form>
       </div>
   </nav>
   <!--Final de barra NavBar-Horizontal-->
 
-  <!--Comienza la tabla para imprimir los datos que se obtengan, cabeceras de columnas-->
+  <!--Selectores de sedes y generaciones para imprimir los datos que se obtengan-->
     <div class="content">
         <h2 class="content-subhead">
-          <div>
-            <form>
-              <!--Lista desplegable para SEDE-->
-              <select id="sedesBuscar" required>
-                <option value="" disabled selected>Selecciona la Sede</option>
-                <option value="lima">LIMA</option>
-                <option value="mexico">MÉXICO</option>
-                <option value="santiago">SANTIAGO</option>
-              </select>
-              <!--lista desplegable para GENERACION-->
-              <select id="generacionesBuscar" required>
-                  <option value="" disabled selected>Selecciona la generación</option>
-                  <option value="tercera">TERCERA</option>
-                  <option value="cuarta">CUARTA</option>
-                  <option value="quinta">QUINTA</option>
-                </select>
-                <!--Botón que detona la busqueda-->
+          <div class="container"> 
+            <div class="row">
+              <div class="col-sm-4">
+                <!--Lista desplegable para SEDE-->
+                <select id="sedesBuscar" required>
+                    <option value="" disabled selected>Selecciona la Sede</option>
+                    <option value="lima">LIMA</option>
+                    <option value="mexico">MÉXICO</option>
+                    <option value="santiago">SANTIAGO</option>
+                  </select>
+
+              </div>
+              <div class="col-sm-4">
+                <!--lista desplegable para GENERACION-->
+                <select id="generacionesBuscar" required>
+                    <option value="" disabled selected>Selecciona la generación</option>
+                    <option value="tercera">TERCERA</option>
+                    <option value="cuarta">CUARTA</option>
+                    <option value="quinta">QUINTA</option>
+                  </select>
+
+              </div>
+              <div class="col-sm-4">
+                <!--BOTÓN que detona la busqueda-->
                 <button id="botonResultado">Buscar</button>
-            </form>
+              </div>
+            </div>  
           </div>          
         </h2>
-        <!--Título de cabeceras de la tabla-->
+        <!--TABLA PRINCIPAL ==> Cabeceras-->
           <table class="table">
             <thead>
               <tr>
@@ -125,9 +116,7 @@
                 <th scope="col">Sede</th>
               </tr>
             </thead>
-    <!--Comienzan filas de la tabla, aquí debe hacerse la interacción del DOM con el main.js-->
-
-      <!--Aquí se hicieron 15 filas, intentar imprimir en el DOM de forma resumida-->
+      <!--Cuerpo de la tabla ==>  Imprimir cuando no se obtenga resultado -->
             <tbody id="table-body">
             </tbody>
           </table>

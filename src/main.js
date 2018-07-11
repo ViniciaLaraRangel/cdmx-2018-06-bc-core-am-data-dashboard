@@ -10,7 +10,9 @@ const printInfo = students => {
 const printSearch = students => {
   document.getElementById('search').addEventListener('click', (event) => {
     event.preventDefault(); 
+    console.log('holaaaaaa');
     const name = document.getElementById('name-to-search').value;
+    
     if (name !== '' && name !== ' ') {
       const searchResult = filterStudent(students, name);
       let result = '';
