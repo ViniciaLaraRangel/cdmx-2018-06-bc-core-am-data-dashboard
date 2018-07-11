@@ -57,19 +57,19 @@
   <!--NavBar Bootstrap-Barra horizontal con funcionalidad-->
     <nav class="navbar">
       <!--Funcionalidades de barra horizontal-->
-        <ul class="navbar-nav"> 
+        <ul class="navbar-nav d-none d-lg-block d-sm-block d-md-none"> 
           <li class="nav-item">
             <a class="nav-link" href="#"></a>
           </li>
         </ul>
         <!--BOTÓN E INPUT ==> funcionalidad de búsqueda de estudiantes-->
-          <form>
-          <div class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" id="name-to-search" placeholder="Buscar estudiantes" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" id="search">Buscar</button>
-          </div>
-        </form>
-      
+        <form>
+        <div class="form-inline my-2 my-lg-0">
+          <input class="form-control" type="search" id="name-to-search" placeholder="Buscar estudiantes" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="search">Buscar</button>
+        </div>
+      </form>
+      </div>
   </nav>
   <!--Final de barra NavBar-Horizontal-->
 
@@ -80,7 +80,7 @@
             <div class="row">
               <div class="col-sm-4">
                 <!--Lista desplegable para SEDE-->
-                <select class="form-control mr-sm-2" id="sedesBuscar" required>
+                <select class="form-control2 form-control mr-sm-2" id="sedesBuscar" required>
                     <option value="" disabled selected>Selecciona la Sede</option>
                     <option value="lima">LIMA</option>
                     <option value="mexico">MÉXICO</option>
@@ -90,7 +90,7 @@
               </div>
               <div class="col-sm-4">
                 <!--lista desplegable para GENERACION-->
-                <select class="form-control mr-sm-2" id="generacionesBuscar" required>
+                <select class="form-control2 form-control mr-sm-2" id="generacionesBuscar" required>
                     <option value="" disabled selected>Selecciona la generación</option>
                     <option value="tercera">TERCERA</option>
                     <option value="cuarta">CUARTA</option>
