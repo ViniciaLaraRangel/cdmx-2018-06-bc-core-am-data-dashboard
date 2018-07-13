@@ -9,7 +9,7 @@ window.getData = () => {
       const students = computeStudentsStats(result);
       printInfo(students);
       printSearch(students);
-      filterStudent(students);
+      filterStudents(students);
       printSearchCampus(students);
       filterGeneration(students);
     })
@@ -63,6 +63,7 @@ window.addStats = progress => {
   // console.log(stats);
   return stats;
 };
+// Retornar una arreglo de arreglos
 
 
 // (En dónde se va a recibir) Parámetro Laboratoria, que dice el readme
@@ -82,6 +83,7 @@ window.computeStudentsStats = laboratoria => {
   generationArray.forEach(element => {
     allGenerationsContent = Object.values(element.generacion);
     allGeneration = Object.keys(element.generacion);
+    // Iterar nuevamente para acceder por cada generacion
     j = 0;
     allGenerationsContent.forEach(student => {
       let students = student.estudiantes;
@@ -103,7 +105,7 @@ window.computeStudentsStats = laboratoria => {
     });
     i++;
   });
-  // console.log(studentArray);
+  console.log(studentArray);
   return studentArray;
 },
 
@@ -112,11 +114,13 @@ window.computeGenerationStats = (student, search) => {
 
 },
 
-// window.sortStudents: () => {
+/* Función para ascendente y descendente 
+window.sortStudents: (student(fixtures), orderBy(), orderDirection) => {
+  window.sortStudents: (student(fixtures), propiedad de que se quiere filtrar, ASC O DESC) => {
+studentArray
+},*/
 
-// },
-
-window.filterStudent = (student, search) => {
+window.filterStudents = (student, search) => {
   let searchResult = [];
   student.forEach(element => {
     if (element.name.indexOf(search) !== -1) {
@@ -149,6 +153,6 @@ window.filterGeneration = (student, search) => {
       searchResult.push(element);
     }
   });
-  // console.log(searchResult);
+  console.log(searchResult);
   return searchResult; 
 };
